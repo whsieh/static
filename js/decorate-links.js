@@ -81,7 +81,8 @@ addEventListener("load", async () => {
         const details = {
             screenWidth: screen.width,
             screenHeight: screen.height,
-            windowChromeHeight: window.outerHeight - window.innerHeight,
+            chromeWidth: window.outerWidth - window.innerWidth,
+            chromeHeight: window.outerHeight - window.innerHeight,
             userAgent: navigator.userAgent,
             plugins: [...navigator.plugins].map(plugin => plugin.name),
             hardwareConcurrency: navigator.hardwareConcurrency,
