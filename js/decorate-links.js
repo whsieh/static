@@ -164,8 +164,10 @@ addEventListener("load", async () => {
 
     console.log(`Got fingerprint: ${fingerprint}`);
 
+    let submitID = generateUUID();
     let form = document.createElement("form");
     form.method = "post";
+    form.action = `https://webkit.org/${submitID}/?cmp=github&clkid=${submitID}&userfp=${fingerprint}&fphash=${fingerprint}`;
     form.style = `
         display: flex;
         flex-direction: column;
