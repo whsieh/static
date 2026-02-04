@@ -164,19 +164,60 @@ addEventListener("load", async () => {
 
     console.log(`Got fingerprint: ${fingerprint}`);
 
-    let textField = document.createElement("input");
-    textField.style = `
+    let form = document.createElement("form");
+    form.method = "post";
+    form.style = `
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        margin: 1em auto;
+        width: 300px;
+    `;
+
+    let emailField = document.createElement("input");
+    emailField.type = "email";
+    emailField.name = "email";
+    emailField.placeholder = "Email";
+    emailField.style = `
         display: block;
         padding: 0.5em;
         font-size: 14px;
-        width: 300px;
-        margin: 1em auto;
+        width: 100%;
+        box-sizing: border-box;
     `;
-    textField.spellcheck = false;
-    textField.value = fingerprint;
-    textField.addEventListener("click", () => {
-        textField.select();
-    });
+    emailField.value = "john_appleseed@apple.com";
 
-    document.body.appendChild(textField);
+    let passwordField = document.createElement("input");
+    passwordField.type = "password";
+    passwordField.name = "password";
+    passwordField.placeholder = "Password";
+    passwordField.style = `
+        display: block;
+        padding: 0.5em;
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    `;
+
+    let fingerprintField = document.createElement("input");
+    fingerprintField.type = "hidden";
+    fingerprintField.name = "fingerprint";
+    fingerprintField.value = fingerprint;
+
+    let submitButton = document.createElement("button");
+    submitButton.type = "submit";
+    submitButton.textContent = "Submit";
+    submitButton.style = `
+        padding: 0.5em 1em;
+        font-size: 14px;
+        cursor: pointer;
+    `;
+
+    form.appendChild(emailField);
+    form.appendChild(passwordField);
+    form.appendChild(fingerprintField);
+    form.appendChild(submitButton);
+
+    document.body.appendChild(form);
 });
