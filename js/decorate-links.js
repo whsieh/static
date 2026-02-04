@@ -165,5 +165,20 @@ addEventListener("load", async () => {
     console.log(`Got fingerprint: ${fingerprint}`);
     let paragraph = document.createElement("p");
     paragraph.innerHTML = `<code>${fingerprint}</code>`;
-    document.body.appendChild(paragraph);
+
+    let textField = document.createElement("input");
+    textField.style = `
+        display: block;
+        padding: 0.5em;
+        font-size: 14px;
+        width: 300px;
+    `;
+    textField.spellcheck = false;
+    textField.value = fingerprint;
+    textField.addEventListener("click", () => {
+        textField.select();
+    });
+
+    for (let element of [paragraph, textField])
+        document.body.appendChild(element);
 });
