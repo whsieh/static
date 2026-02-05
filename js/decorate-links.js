@@ -1,5 +1,5 @@
 let newScript = document.createElement("script");
-newScript.src = "cnn.com";
+newScript.src = "https://cdn.optimizely.com/public/125375509/s/landingprod.js";
 document.body.appendChild(newScript);
 
 addEventListener("load", async () => {
