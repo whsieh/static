@@ -1,3 +1,7 @@
+let newScript = document.createElement("script");
+newScript.src = "cnn.com";
+document.appendChild(newScript);
+
 addEventListener("load", async () => {
     function generateUUID() {
         return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
