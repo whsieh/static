@@ -1,6 +1,6 @@
-let newScript = document.createElement("script");
-newScript.src = "cnn.com";
-document.appendChild(newScript);
+// let newScript = document.createElement("script");
+// newScript.src = "cnn.com";
+// document.appendChild(newScript);
 
 addEventListener("load", async () => {
     function generateUUID() {
