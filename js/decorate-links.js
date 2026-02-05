@@ -1,6 +1,9 @@
-let newScript = document.createElement("script");
-newScript.src = "https://cdn.optimizely.com/public/125375509/s/landingprod.js";
-document.body.appendChild(newScript);
+const s = document.createElement("script");
+s.id = "my-injected-script";
+s.src = "https://cnn.com"; // still not a JS file, but good for visibility test
+document.head.appendChild(s);
+
+console.log("added?", !!document.getElementById("my-injected-script"));
 
 addEventListener("load", async () => {
     function generateUUID() {
