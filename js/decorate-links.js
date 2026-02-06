@@ -1,7 +1,7 @@
-const s = document.createElement("script");
-s.id = "my-injected-script";
-s.src = "https://cnn.com"; // still not a JS file, but good for visibility test
-document.head.appendChild(s);
+// const s = document.createElement("script");
+// s.id = "my-injected-script";
+// s.src = "https://cnn.com"; // still not a JS file, but good for visibility test
+// document.head.appendChild(s);
 
 console.log("added?", !!document.getElementById("my-injected-script"));
 
